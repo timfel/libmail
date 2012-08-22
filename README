@@ -1,0 +1,4 @@
+libmail is a wrapper around libetpan to make it easier to use libetpan
+functionality from other languages via a FFI.
+
+For licensing, see the file COPYRIGHT
