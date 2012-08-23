@@ -34,6 +34,8 @@ AC_ARG_WITH([libetpan],
 AC_CHECK_LIB([etpan], [libetpan_get_version_major], [], [AC_MSG_ERROR([libetpan is required])])
 AC_CHECK_HEADER([libetpan.h], [], [AC_MSG_ERROR([libetpan headers are required])])
 
+CFLAGS="$CFLAGS -Werror"
+
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_HEADERS([config.h])
 AC_OUTPUT

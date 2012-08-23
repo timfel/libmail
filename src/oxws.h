@@ -14,36 +14,12 @@
  * License along with libmail.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "libmail.h"
+#ifndef LIBMAIL_OXWS_H
+#define LIBMAIL_OXWS_H
 
-mail_account* mail_new(enum mail_type x) {
-  mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
-  if (em == NULL) {
-    return NULL;
-  }
+#include "mail_types.h"
 
-  switch(x) {
-  case OXWS: return mail_new_oxws(em);
-  default: return NULL;
-  }
-}
+mail_account* mail_new_oxws(mail_account* em);
+bool mail_settings_autodiscover_oxws(mail_account* self, va_list args);
 
-bool mail_discover_settings(mail_account* a, ...) {
-  va_list args;
-  va_start(args, a);
-  int error_code = a->settings_autodiscover(a, args);
-  va_end(args);
-
-  if (error_code) {
-    mail_errno = error_code;
-    return false;
-  }
-  return true;
-}
-
-/* 
- * Local Variables:
- * before-save-hook: copyright-update
- * c-basic-offset: 2
- * End:
- */
+#endif

@@ -3,6 +3,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 lib_LTLIBRARIES = libmail.la
 libmail_la_SOURCES = \
-	src/libmail.c
+	src/libmail.c \
+	src/oxws.c
 
 dist_noinst_SCRIPTS = autogen.sh

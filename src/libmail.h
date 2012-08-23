@@ -17,8 +17,8 @@
 #ifndef LIBMAIL_H
 #define LIBMAIL_H
 
-#include "config.h"
-#include "libetpan.h"
+#include "mail_types.h"
+#include "oxws.h"
 
 #if defined(__WIN32__) || defined(__MINGW32__)
 # define DLLImport __declspec(dllimport)
@@ -26,4 +26,6 @@
 # define DLLImport
 #endif
 
-#endif LIBMAIL_H
+DLLImport mail_account* mail_new(enum mail_type x);
+
+#endif
