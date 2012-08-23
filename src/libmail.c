@@ -16,30 +16,41 @@
 
 #include "libmail.h"
 
+char* mail_get_error_str() {
+  if (!mail_errno) {
+    printf("NO ERROR\n");
+    return NULL;
+  } else {
+    char* cpy = (char*)calloc(strlen(mail_errno) + 1, sizeof(char));
+    strcpy(cpy, mail_errno);
+    printf("%s -> %s\n", mail_errno, cpy);
+    return cpy;
+  }
+}
+
 mail_account* mail_new(enum mail_type x) {
   mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
   if (em == NULL) {
     return NULL;
   }
-
   switch(x) {
   case OXWS: return mail_new_oxws(em);
   default: return NULL;
   }
 }
 
-bool mail_discover_settings(mail_account* a, ...) {
-  va_list args;
-  va_start(args, a);
-  int error_code = a->settings_autodiscover(a, args);
-  va_end(args);
-
-  if (error_code) {
-    mail_errno = error_code;
-    return false;
+#define WRAP_FUNCTION(FUNC_NAME, METHOD_NAME)		\
+  bool FUNC_NAME(mail_account* a, ...) {		\
+  va_list args;						\
+  va_start(args, a);					\
+  bool result = a->METHOD_NAME(a, args);		\
+  va_end(args);						\
+  return result;					\
   }
-  return true;
-}
+
+WRAP_FUNCTION(mail_discover_settings, settings_autodiscover)
+WRAP_FUNCTION(mail_set_settings, settings_set)
+WRAP_FUNCTION(mail_connect, connect)
 
 /* 
  * Local Variables:

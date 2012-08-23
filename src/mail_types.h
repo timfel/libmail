@@ -20,36 +20,51 @@
 #include "config.h"
 #include "stdbool.h"
 #include "stdarg.h"
+#include "string.h"
 #include "libetpan.h"
 
-static int mail_errno = 0;
-
 enum mail_type {
-    POP3,
-    IMAP,
-    SMTP,
-    OXWS
+  POP3,
+  IMAP,
+  SMTP,
+  OXWS
 };
 
 enum mail_capabilities {
-    MAIL_CAN_SEND,
-    MAIL_CAN_RECEIVE,
-    MAIL_CAN_SEARCH = 0x4
+  MAIL_CAN_SEND,
+  MAIL_CAN_RECEIVE,
+  MAIL_CAN_SEARCH = 0x4
 };
 
 typedef struct _mail_account {
-    union {
-	oxws* oxws;
-	mailimap* imap;
-	mailpop3* pop3;
-	mailsmtp* smtp;
-    } self;
+  union {
+    oxws* oxws;
+    mailimap* imap;
+    mailpop3* pop3;
+    mailsmtp* smtp;
+  } self;
 
-    int mail_capabilities;
-    bool (*settings_autodiscover)(struct _mail_account*, va_list);
-    bool (*settings_set)(struct _mail_account*, va_list);
-    bool (*connect)(struct _mail_account*, va_list);
-    bool (*find)(struct _mail_account*, va_list);
+  int mail_capabilities;
+  bool (*settings_autodiscover)(struct _mail_account*, va_list);
+  bool (*settings_set)(struct _mail_account*, va_list);
+  bool (*connect)(struct _mail_account*, va_list);
+  bool (*find)(struct _mail_account*, va_list);
 } mail_account;
 
+static char* mail_errno = NULL;
+static void mail_set_error_str(char* msg) {
+  if (mail_errno) {
+    free(mail_errno);
+  }
+  mail_errno = (char*)calloc(strlen(msg) + 1, sizeof(char));
+  strcpy(mail_errno, msg);
+}
+
 #endif
+
+/* 
+ * Local Variables:
+ * before-save-hook: copyright-update
+ * c-basic-offset: 2
+ * End:
+ */

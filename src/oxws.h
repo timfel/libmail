@@ -21,5 +21,14 @@
 
 mail_account* mail_new_oxws(mail_account* em);
 bool mail_settings_autodiscover_oxws(mail_account* self, va_list args);
+bool mail_settings_set_oxws(mail_account* self, va_list args);
+bool mail_connect_oxws(mail_account* self, va_list args);
 
 #endif
+
+/* 
+ * Local Variables:
+ * before-save-hook: copyright-update
+ * c-basic-offset: 2
+ * End:
+ */

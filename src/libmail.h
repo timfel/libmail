@@ -21,11 +21,22 @@
 #include "oxws.h"
 
 #if defined(__WIN32__) || defined(__MINGW32__)
-# define DLLImport __declspec(dllimport)
+# define DLLImport __declspec(dllexport)
 #else
 # define DLLImport
 #endif
 
+DLLImport char* mail_get_error_str();
 DLLImport mail_account* mail_new(enum mail_type x);
+DLLImport bool mail_discover_settings(mail_account* x, ...);
+DLLImport bool mail_set_settings(mail_account* x, ...);
+DLLImport bool mail_connect(mail_account* x, ...);
 
 #endif
+
+/* 
+ * Local Variables:
+ * before-save-hook: copyright-update
+ * c-basic-offset: 2
+ * End:
+ */

@@ -24,15 +24,13 @@ mail_account* mail_new_oxws(mail_account* em) {
 
   em->mail_capabilities = MAIL_CAN_SEND | MAIL_CAN_SEND | MAIL_CAN_SEARCH;
   em->settings_autodiscover = &mail_settings_autodiscover_oxws;
-  /* 
-   * em->settings_set = &mail_settings_set_oxws;
-   * em->connect = &mail_connect_oxws;
-   * em->find = &mail_find_oxws;
-   */
+  em->settings_set = &mail_settings_set_oxws;
+  em->connect = &mail_connect_oxws;
+  /* em->find = &mail_find_oxws; */
   return em;
 }
 
-bool mail_settings_autodiscover_oxws(mail_account* self, va_list args) {
+bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
   char *url, *mail, *user, *pw, *domain;
   oxws_result result;
 
@@ -46,6 +44,71 @@ bool mail_settings_autodiscover_oxws(mail_account* self, va_list args) {
   if (!pw) return false;
   domain = va_arg(args, char*);
 
-  result = oxws_autodiscover_connection_settings((oxws*)self, url, mail, user, pw, domain);
-  if (result != OXWS_NO_ERROR) return false;
+  result = oxws_autodiscover_connection_settings(a->self.oxws, url, mail, user, pw, domain);
+
+  switch (result) {
+  case OXWS_NO_ERROR:
+    return true;
+  case OXWS_ERROR_INVALID_PARAMETER:
+    mail_set_error_str("a required parameter is missing, no host given, or host cannot be extracted from email_address");
+    break;
+  case OXWS_ERROR_AUTODISCOVER_UNAVAILABLE:
+    mail_set_error_str("autodiscovering the connection settings failed");
+    break;
+  default:
+    mail_set_error_str ("an unknown error occurred");
+  }
+  return false;
 }
+
+bool mail_settings_set_oxws(mail_account* a, va_list args) {
+  char* url;
+  oxws_connection_settings* settings;
+  oxws_result result;
+
+  settings = (oxws_connection_settings*)calloc(sizeof(oxws_connection_settings), 1);
+
+  url = va_arg(args, char*);
+  if (url) settings->as_url = url;
+  url = va_arg(args, char*);
+  if (url) settings->oof_url = url;
+  url = va_arg(args, char*);
+  if (url) settings->um_url = url;
+  url = va_arg(args, char*);
+  if (url) settings->oab_url = url;
+
+  result = oxws_set_connection_settings(a->self.oxws, settings);
+  switch (result) {
+  case OXWS_NO_ERROR:
+    return true;
+  case OXWS_ERROR_INVALID_PARAMETER:
+    mail_set_error_str("a required parameter is missing");
+    break;
+  case OXWS_ERROR_BAD_STATE:
+    mail_set_error_str("state is not OXWS_STATE_NEW");
+    break;
+  default:
+    mail_set_error_str("internal, undefined error");
+  }
+  return false;
+}
+
+bool mail_connect_oxws(mail_account* a, va_list args) {
+  char *user, *pw, *domain;
+  oxws_result result;
+
+  user = va_arg(args, char*);
+  pw = va_arg(args, char*);
+  domain = va_arg(args, char*);
+
+  result = oxws_connect(a->self.oxws, user, pw, domain);
+  if (result != OXWS_NO_ERROR) return false;
+  return true;
+}
+
+/* 
+ * Local Variables:
+ * before-save-hook: copyright-update
+ * c-basic-offset: 2
+ * End:
+ */
