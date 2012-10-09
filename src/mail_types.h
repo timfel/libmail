@@ -1,8 +1,8 @@
-/* 
+/*
  * Copyright (C) 2012 by Tim Felgentreff
- * 
+ *
  * This file is part of libmail.
- * 
+ *
  * libmail is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
@@ -53,16 +53,20 @@ typedef struct _mail_account {
 
 static char* mail_errno = NULL;
 static void mail_set_error_str(char* msg) {
-  if (mail_errno) {
-    free(mail_errno);
+  if(mail_errno == msg) return;
+
+  free(mail_errno);
+  mail_errno = NULL;
+
+  if(msg != NULL) {
+    mail_errno = (char*)calloc(strlen(msg) + 1, sizeof(char));
+    strcpy(mail_errno, msg);
   }
-  mail_errno = (char*)calloc(strlen(msg) + 1, sizeof(char));
-  strcpy(mail_errno, msg);
 }
 
 #endif
 
-/* 
+/*
  * Local Variables:
  * before-save-hook: copyright-update
  * c-basic-offset: 2
