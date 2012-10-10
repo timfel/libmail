@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A59DCB21625C25E004B6640 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A59DCB01625C25E004B6640 /* InfoPlist.strings */; };
+		8AB8204E1625C37200BD2B26 /* libmail.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB820491625C37200BD2B26 /* libmail.c */; };
+		8AB8204F1625C37200BD2B26 /* libmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AB8204A1625C37200BD2B26 /* libmail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AB820501625C37200BD2B26 /* mail_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AB8204B1625C37200BD2B26 /* mail_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AB820511625C37200BD2B26 /* oxws.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8204C1625C37200BD2B26 /* oxws.c */; };
+		8AB820521625C37200BD2B26 /* oxws.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AB8204D1625C37200BD2B26 /* oxws.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AB820AC1625C3A500BD2B26 /* libetpan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB820831625C39F00BD2B26 /* libetpan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AB820821625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = libetpan;
+		};
+		8AB820841625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C69AB10A10546FE500F32FBD;
+			remoteInfo = "static libetpan";
+		};
+		8AB820861625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C682E2C015B315EF00BE9DA7;
+			remoteInfo = "libetpan ios";
+		};
+		8AB820881625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E09E15E765FD00C3971F;
+			remoteInfo = smime;
+		};
+		8AB8208A1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0AB15E766D100C3971F;
+			remoteInfo = decrypt;
+		};
+		8AB8208C1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0B715E7676F00C3971F;
+			remoteInfo = pgp;
+		};
+		8AB8208E1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0C215E7677200C3971F;
+			remoteInfo = frm;
+		};
+		8AB820901625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0CD15E7677300C3971F;
+			remoteInfo = "frm-tree";
+		};
+		8AB820921625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0D815E7677500C3971F;
+			remoteInfo = "frm-simple";
+		};
+		8AB820941625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E0E315E7677600C3971F;
+			remoteInfo = "readmsg-simple";
+		};
+		8AB820961625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E12515E76AB300C3971F;
+			remoteInfo = "fetch-attachment";
+		};
+		8AB820981625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E13015E76AB500C3971F;
+			remoteInfo = smtpsend;
+		};
+		8AB8209A1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E16D15E76B8500C3971F;
+			remoteInfo = "readmsg-uid";
+		};
+		8AB8209C1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E17F15E76BBB00C3971F;
+			remoteInfo = readmsg;
+		};
+		8AB8209E1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E13B15E76AB600C3971F;
+			remoteInfo = "compose-msg";
+		};
+		8AB820A01625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E14615E76AB700C3971F;
+			remoteInfo = "imap-sample";
+		};
+		8AB820A21625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E15115E76AB800C3971F;
+			remoteInfo = "mime-create";
+		};
+		8AB820A41625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E19215E76CC600C3971F;
+			remoteInfo = "mime-parse";
+		};
+		8AB820A61625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E19E15E76D0F00C3971F;
+			remoteInfo = "pop-sample";
+		};
+		8AB820A81625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AB5E08615E7654000C3971F;
+			remoteInfo = "oxws-sample";
+		};
+		8AB820AA1625C39F00BD2B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A79F16916202C09009689B3;
+			remoteInfo = test_oxws;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A59DCA41625C25E004B6640 /* libmail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libmail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A59DCAF1625C25E004B6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8A59DCB11625C25E004B6640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A59DCB31625C25E004B6640 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		8AB820491625C37200BD2B26 /* libmail.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libmail.c; sourceTree = "<group>"; };
+		8AB8204A1625C37200BD2B26 /* libmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmail.h; sourceTree = "<group>"; };
+		8AB8204B1625C37200BD2B26 /* mail_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mail_types.h; sourceTree = "<group>"; };
+		8AB8204C1625C37200BD2B26 /* oxws.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = oxws.c; sourceTree = "<group>"; };
+		8AB8204D1625C37200BD2B26 /* oxws.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oxws.h; sourceTree = "<group>"; };
+		8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "../lib/libetpan/build-mac/libetpan.xcodeproj"; sourceTree = "<group>"; };
+		8AB820AD1625C3AC00BD2B26 /* libetpan.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = libetpan.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/libmail-gbfbglivhppavabfofurwcpschmr/Build/Products/Debug/libetpan.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A59DCA01625C25E004B6640 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB820AC1625C3A500BD2B26 /* libetpan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A59DC981625C25E004B6640 = {
+			isa = PBXGroup;
+			children = (
+				8AB820481625C37200BD2B26 /* src */,
+				8A59DCAE1625C25E004B6640 /* other */,
+				8A59DCA61625C25E004B6640 /* Frameworks */,
+				8A59DCA51625C25E004B6640 /* Products */,
+				8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		8A59DCA51625C25E004B6640 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A59DCA41625C25E004B6640 /* libmail.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A59DCA61625C25E004B6640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AB820AD1625C3AC00BD2B26 /* libetpan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A59DCAE1625C25E004B6640 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				8A59DCAF1625C25E004B6640 /* Info.plist */,
+				8A59DCB01625C25E004B6640 /* InfoPlist.strings */,
+				8A59DCB31625C25E004B6640 /* Prefix.pch */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		8AB820481625C37200BD2B26 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				8AB820491625C37200BD2B26 /* libmail.c */,
+				8AB8204A1625C37200BD2B26 /* libmail.h */,
+				8AB8204B1625C37200BD2B26 /* mail_types.h */,
+				8AB8204C1625C37200BD2B26 /* oxws.c */,
+				8AB8204D1625C37200BD2B26 /* oxws.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		8AB820541625C39F00BD2B26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AB820831625C39F00BD2B26 /* libetpan.framework */,
+				8AB820851625C39F00BD2B26 /* libetpan.a */,
+				8AB820871625C39F00BD2B26 /* libetpan-ios.a */,
+				8AB820891625C39F00BD2B26 /* smime */,
+				8AB8208B1625C39F00BD2B26 /* decrypt */,
+				8AB8208D1625C39F00BD2B26 /* pgp */,
+				8AB8208F1625C39F00BD2B26 /* frm */,
+				8AB820911625C39F00BD2B26 /* frm-tree */,
+				8AB820931625C39F00BD2B26 /* frm-simple */,
+				8AB820951625C39F00BD2B26 /* readmsg-simple */,
+				8AB820971625C39F00BD2B26 /* fetch-attachment */,
+				8AB820991625C39F00BD2B26 /* smtpsend */,
+				8AB8209B1625C39F00BD2B26 /* readmsg-uid */,
+				8AB8209D1625C39F00BD2B26 /* readmsg */,
+				8AB8209F1625C39F00BD2B26 /* compose-msg */,
+				8AB820A11625C39F00BD2B26 /* imap-sample */,
+				8AB820A31625C39F00BD2B26 /* mime-create */,
+				8AB820A51625C39F00BD2B26 /* mime-parse */,
+				8AB820A71625C39F00BD2B26 /* pop-sample */,
+				8AB820A91625C39F00BD2B26 /* oxws-sample */,
+				8AB820AB1625C39F00BD2B26 /* test_oxws */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8A59DCA11625C25E004B6640 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB8204F1625C37200BD2B26 /* libmail.h in Headers */,
+				8AB820501625C37200BD2B26 /* mail_types.h in Headers */,
+				8AB820521625C37200BD2B26 /* oxws.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8A59DCA31625C25E004B6640 /* libmail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A59DCB91625C25E004B6640 /* Build configuration list for PBXNativeTarget "libmail" */;
+			buildPhases = (
+				8A59DC9F1625C25E004B6640 /* Sources */,
+				8A59DCA01625C25E004B6640 /* Frameworks */,
+				8A59DCA11625C25E004B6640 /* Headers */,
+				8A59DCA21625C25E004B6640 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libmail;
+			productName = lib;
+			productReference = 8A59DCA41625C25E004B6640 /* libmail.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A59DC9A1625C25E004B6640 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 8A59DC9D1625C25E004B6640 /* Build configuration list for PBXProject "libmail" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A59DC981625C25E004B6640;
+			productRefGroup = 8A59DCA51625C25E004B6640 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8AB820541625C39F00BD2B26 /* Products */;
+					ProjectRef = 8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A59DCA31625C25E004B6640 /* libmail */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8AB820831625C39F00BD2B26 /* libetpan.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = libetpan.framework;
+			remoteRef = 8AB820821625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820851625C39F00BD2B26 /* libetpan.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libetpan.a;
+			remoteRef = 8AB820841625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820871625C39F00BD2B26 /* libetpan-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libetpan-ios.a";
+			remoteRef = 8AB820861625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820891625C39F00BD2B26 /* smime */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = smime;
+			remoteRef = 8AB820881625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8208B1625C39F00BD2B26 /* decrypt */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = decrypt;
+			remoteRef = 8AB8208A1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8208D1625C39F00BD2B26 /* pgp */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pgp;
+			remoteRef = 8AB8208C1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8208F1625C39F00BD2B26 /* frm */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = frm;
+			remoteRef = 8AB8208E1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820911625C39F00BD2B26 /* frm-tree */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "frm-tree";
+			remoteRef = 8AB820901625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820931625C39F00BD2B26 /* frm-simple */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "frm-simple";
+			remoteRef = 8AB820921625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820951625C39F00BD2B26 /* readmsg-simple */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "readmsg-simple";
+			remoteRef = 8AB820941625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820971625C39F00BD2B26 /* fetch-attachment */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "fetch-attachment";
+			remoteRef = 8AB820961625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820991625C39F00BD2B26 /* smtpsend */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = smtpsend;
+			remoteRef = 8AB820981625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8209B1625C39F00BD2B26 /* readmsg-uid */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "readmsg-uid";
+			remoteRef = 8AB8209A1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8209D1625C39F00BD2B26 /* readmsg */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = readmsg;
+			remoteRef = 8AB8209C1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB8209F1625C39F00BD2B26 /* compose-msg */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "compose-msg";
+			remoteRef = 8AB8209E1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820A11625C39F00BD2B26 /* imap-sample */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "imap-sample";
+			remoteRef = 8AB820A01625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820A31625C39F00BD2B26 /* mime-create */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "mime-create";
+			remoteRef = 8AB820A21625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820A51625C39F00BD2B26 /* mime-parse */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "mime-parse";
+			remoteRef = 8AB820A41625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820A71625C39F00BD2B26 /* pop-sample */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "pop-sample";
+			remoteRef = 8AB820A61625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820A91625C39F00BD2B26 /* oxws-sample */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "oxws-sample";
+			remoteRef = 8AB820A81625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8AB820AB1625C39F00BD2B26 /* test_oxws */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = test_oxws;
+			remoteRef = 8AB820AA1625C39F00BD2B26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A59DCA21625C25E004B6640 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A59DCB21625C25E004B6640 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A59DC9F1625C25E004B6640 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB8204E1625C37200BD2B26 /* libmail.c in Sources */,
+				8AB820511625C37200BD2B26 /* oxws.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A59DCB01625C25E004B6640 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A59DCB11625C25E004B6640 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A59DCB71625C25E004B6640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8A59DCB81625C25E004B6640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8A59DCBA1625C25E004B6640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = other/Prefix.pch;
+				INFOPLIST_FILE = other/Info.plist;
+				PRODUCT_NAME = libmail;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		8A59DCBB1625C25E004B6640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = other/Prefix.pch;
+				INFOPLIST_FILE = other/Info.plist;
+				PRODUCT_NAME = libmail;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A59DC9D1625C25E004B6640 /* Build configuration list for PBXProject "libmail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A59DCB71625C25E004B6640 /* Debug */,
+				8A59DCB81625C25E004B6640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A59DCB91625C25E004B6640 /* Build configuration list for PBXNativeTarget "libmail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A59DCBA1625C25E004B6640 /* Debug */,
+				8A59DCBB1625C25E004B6640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A59DC9A1625C25E004B6640 /* Project object */;
+}

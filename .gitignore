@@ -36,3 +36,6 @@ Makefile.in
 /m4/*
 /libtool
 /stamp-h1
+
+/build-mac/libmail.xcodeproj/project.xcworkspace/xcuserdata/
+/build-mac/libmail.xcodeproj/xcuserdata/

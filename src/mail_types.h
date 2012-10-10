@@ -17,11 +17,11 @@
 #ifndef LIBMAIL_MAIL_TYPES_H
 #define LIBMAIL_MAIL_TYPES_H
 
-#include "config.h"
+//#include "config.h"
 #include "stdbool.h"
 #include "stdarg.h"
 #include "string.h"
-#include "libetpan.h"
+#include <libetpan/libetpan.h>
 
 enum mail_type {
   POP3,
