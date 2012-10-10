@@ -177,7 +177,7 @@
 		8AB8204C1625C37200BD2B26 /* oxws.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = oxws.c; sourceTree = "<group>"; };
 		8AB8204D1625C37200BD2B26 /* oxws.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oxws.h; sourceTree = "<group>"; };
 		8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "../lib/libetpan/build-mac/libetpan.xcodeproj"; sourceTree = "<group>"; };
-		8AB820AD1625C3AC00BD2B26 /* libetpan.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = libetpan.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/libmail-gbfbglivhppavabfofurwcpschmr/Build/Products/Debug/libetpan.framework"; sourceTree = "<group>"; };
+		8AB820AD1625C3AC00BD2B26 /* libetpan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libetpan.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/libmail-gbfbglivhppavabfofurwcpschmr/Build/Products/Debug/libetpan.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
