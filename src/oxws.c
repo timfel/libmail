@@ -35,13 +35,9 @@ bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
   oxws_result result;
 
   host = va_arg(args, char*);
-  if (!host) return false;
   mail = va_arg(args, char*);
-  if (!mail) return false;
   user = va_arg(args, char*);
-  if (!user) return false;
   pw = va_arg(args, char*);
-  if (!pw) return false;
   domain = va_arg(args, char*);
 
   result = oxws_autodiscover_connection_settings(a->self.oxws, host, mail, user, pw, domain);
@@ -62,20 +58,14 @@ bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
 }
 
 bool mail_settings_set_oxws(mail_account* a, va_list args) {
-  char* url;
   oxws_connection_settings* settings;
   oxws_result result;
 
   settings = (oxws_connection_settings*)calloc(sizeof(oxws_connection_settings), 1);
-
-  url = va_arg(args, char*);
-  if (url) settings->as_url = url;
-  url = va_arg(args, char*);
-  if (url) settings->oof_url = url;
-  url = va_arg(args, char*);
-  if (url) settings->um_url = url;
-  url = va_arg(args, char*);
-  if (url) settings->oab_url = url;
+  settings->as_url = va_arg(args, char*);
+  settings->oof_url = va_arg(args, char*);
+  settings->um_url = va_arg(args, char*);
+  settings->oab_url = va_arg(args, char*);
 
   result = oxws_set_connection_settings(a->self.oxws, settings);
   switch (result) {
