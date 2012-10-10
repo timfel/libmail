@@ -168,9 +168,8 @@
 
 /* Begin PBXFileReference section */
 		8A59DCA41625C25E004B6640 /* libmail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libmail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A59DCAF1625C25E004B6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8A59DCAF1625C25E004B6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A59DCB11625C25E004B6640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8A59DCB31625C25E004B6640 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		8AB820491625C37200BD2B26 /* libmail.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libmail.c; sourceTree = "<group>"; };
 		8AB8204A1625C37200BD2B26 /* libmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmail.h; sourceTree = "<group>"; };
 		8AB8204B1625C37200BD2B26 /* mail_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mail_types.h; sourceTree = "<group>"; };
@@ -196,7 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				8AB820481625C37200BD2B26 /* src */,
-				8A59DCAE1625C25E004B6640 /* other */,
+				8A59DCAF1625C25E004B6640 /* Info.plist */,
+				8A59DCB01625C25E004B6640 /* InfoPlist.strings */,
 				8A59DCA61625C25E004B6640 /* Frameworks */,
 				8A59DCA51625C25E004B6640 /* Products */,
 				8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */,
@@ -217,16 +217,6 @@
 				8AB820AD1625C3AC00BD2B26 /* libetpan.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8A59DCAE1625C25E004B6640 /* other */ = {
-			isa = PBXGroup;
-			children = (
-				8A59DCAF1625C25E004B6640 /* Info.plist */,
-				8A59DCB01625C25E004B6640 /* InfoPlist.strings */,
-				8A59DCB31625C25E004B6640 /* Prefix.pch */,
-			);
-			path = other;
 			sourceTree = "<group>";
 		};
 		8AB820481625C37200BD2B26 /* src */ = {
@@ -578,9 +568,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = other/Prefix.pch;
-				INFOPLIST_FILE = other/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = libmail;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -593,9 +581,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = other/Prefix.pch;
-				INFOPLIST_FILE = other/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = libmail;
 				WRAPPER_EXTENSION = framework;
 			};
