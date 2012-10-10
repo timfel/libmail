@@ -31,11 +31,11 @@ mail_account* mail_new_oxws(mail_account* em) {
 }
 
 bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
-  char *url, *mail, *user, *pw, *domain;
+  char *host, *mail, *user, *pw, *domain;
   oxws_result result;
 
-  url = va_arg(args, char*);
-  if (!url) return false;
+  host = va_arg(args, char*);
+  if (!host) return false;
   mail = va_arg(args, char*);
   if (!mail) return false;
   user = va_arg(args, char*);
@@ -44,7 +44,7 @@ bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
   if (!pw) return false;
   domain = va_arg(args, char*);
 
-  result = oxws_autodiscover_connection_settings(a->self.oxws, url, mail, user, pw, domain);
+  result = oxws_autodiscover_connection_settings(a->self.oxws, host, mail, user, pw, domain);
 
   switch (result) {
   case OXWS_NO_ERROR:
