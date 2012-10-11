@@ -30,6 +30,11 @@ mail_account* mail_new_oxws(mail_account* em) {
   return em;
 }
 
+#define DECLARE_ERROR_CASE(result, error_message) \
+  case result: mail_set_error_str(error_message); break;
+#define DECLARE_DEFAULT_ERROR_CASE() \
+  default: mail_set_error_str("An unknown error occurred."); break;
+
 bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
   char *host, *mail, *user, *pw, *domain;
   oxws_result result;
@@ -42,16 +47,13 @@ bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
 
   result = oxws_autodiscover_connection_settings(a->self.oxws, host, mail, user, pw, domain);
   switch (result) {
-  case OXWS_NO_ERROR:
-    return true;
-  case OXWS_ERROR_INVALID_PARAMETER:
-    mail_set_error_str("a required parameter is missing, no host given, or host cannot be extracted from email_address");
-    break;
-  case OXWS_ERROR_AUTODISCOVER_UNAVAILABLE:
-    mail_set_error_str("autodiscovering the connection settings failed");
-    break;
-  default:
-    mail_set_error_str ("an unknown error occurred");
+    case OXWS_NO_ERROR: return true;
+
+    DECLARE_ERROR_CASE(OXWS_ERROR_INVALID_PARAMETER, "A required parameter is missing, no host or username given, or they cannot be extracted from email_address.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_BAD_STATE, "Object is in wrong state. Probably the connection settings have already been configured.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_AUTH_FAILED, "The provided credentials are invalid.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_AUTODISCOVER_UNAVAILABLE, "Autodiscovering the connection settings failed.");
+    DECLARE_DEFAULT_ERROR_CASE();
   }
   return false;
 }
@@ -68,16 +70,11 @@ bool mail_settings_set_oxws(mail_account* a, va_list args) {
 
   result = oxws_set_connection_settings(a->self.oxws, settings);
   switch (result) {
-  case OXWS_NO_ERROR:
-    return true;
-  case OXWS_ERROR_INVALID_PARAMETER:
-    mail_set_error_str("a required parameter is missing");
-    break;
-  case OXWS_ERROR_BAD_STATE:
-    mail_set_error_str("state is not OXWS_STATE_NEW");
-    break;
-  default:
-    mail_set_error_str("internal, undefined error");
+    case OXWS_NO_ERROR: return true;
+      
+    DECLARE_ERROR_CASE(OXWS_ERROR_INVALID_PARAMETER, "A required parameter is missing.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_BAD_STATE, "Object is in wrong state. Probably the connection settings have already been configured.");
+    DECLARE_DEFAULT_ERROR_CASE();
   }
   return false;
 }
@@ -91,8 +88,17 @@ bool mail_connect_oxws(mail_account* a, va_list args) {
   domain = va_arg(args, char*);
 
   result = oxws_connect(a->self.oxws, user, pw, domain);
-  if (result != OXWS_NO_ERROR) return false;
-  return true;
+  switch (result) {
+    case OXWS_NO_ERROR: return true;
+      
+    DECLARE_ERROR_CASE(OXWS_ERROR_INVALID_PARAMETER, "A required parameter is missing.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_BAD_STATE, "Object is in wrong state. Probably the connection settings have not been configured, or the connection has already been established.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_CONNECT, "Failed to connect to the Exchange server using configured connection settings.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_AUTH_FAILED, "The provided credentials are invalid.");
+    DECLARE_ERROR_CASE(OXWS_ERROR_NO_EWS, "The configured connection settings do not seem to refer to an Exchange server.");
+    DECLARE_DEFAULT_ERROR_CASE();
+  }
+  return false;
 }
 
 /* 
