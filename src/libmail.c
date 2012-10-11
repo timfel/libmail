@@ -18,7 +18,6 @@
 
 char* mail_get_error_str() {
   if (!mail_errno) {
-    printf("NO ERROR\n");
     return NULL;
   } else {
     char* cpy = (char*)calloc(strlen(mail_errno) + 1, sizeof(char));

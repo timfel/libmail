@@ -18,15 +18,15 @@
 
 mail_account* mail_new_oxws(mail_account* em) {
   em->self.oxws = oxws_new();
-  if (em->self.oxws == NULL) {
+  if (em->self.oxws == NULL)
     return NULL;
-  }
 
   em->mail_capabilities = MAIL_CAN_SEND | MAIL_CAN_SEND | MAIL_CAN_SEARCH;
   em->settings_autodiscover = &mail_settings_autodiscover_oxws;
   em->settings_set = &mail_settings_set_oxws;
   em->connect = &mail_connect_oxws;
   /* em->find = &mail_find_oxws; */
+
   return em;
 }
 
@@ -41,7 +41,6 @@ bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
   domain = va_arg(args, char*);
 
   result = oxws_autodiscover_connection_settings(a->self.oxws, host, mail, user, pw, domain);
-
   switch (result) {
   case OXWS_NO_ERROR:
     return true;
