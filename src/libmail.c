@@ -31,8 +31,8 @@ mail_account* mail_new(mail_type x) {
   mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
   if (em == NULL) return NULL;
   switch(x) {
-    case OXWS: return mail_new_oxws(em);
-    case IMAP: return mail_new_imap(em);
+    case MAIL_TYPE_OXWS: return mail_new_oxws(em);
+    case MAIL_TYPE_IMAP: return mail_new_imap(em);
     default: return NULL;
   }
 }

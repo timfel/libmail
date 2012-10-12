@@ -24,10 +24,10 @@
 #include <libetpan/libetpan.h>
 
 typedef enum mail_type {
-  POP3,
-  IMAP,
-  SMTP,
-  OXWS
+  MAIL_TYPE_POP3,
+  MAIL_TYPE_IMAP,
+  MAIL_TYPE_SMTP,
+  MAIL_TYPE_OXWS
 } mail_type;
 
 enum mail_capabilities {
