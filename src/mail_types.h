@@ -23,12 +23,12 @@
 #include "string.h"
 #include <libetpan/libetpan.h>
 
-enum mail_type {
+typedef enum mail_type {
   POP3,
   IMAP,
   SMTP,
   OXWS
-};
+} mail_type;
 
 enum mail_capabilities {
   MAIL_CAN_SEND,

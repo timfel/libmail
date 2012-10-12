@@ -32,7 +32,7 @@
 
 DLLImport char* mail_get_error_str();
 
-DLLImport mail_account* mail_new(enum mail_type x);
+DLLImport mail_account* mail_new(mail_type x);
 DLLImport void mail_free(mail_account* x, ...);
 
 DLLImport bool mail_discover_settings(mail_account* x, ...);

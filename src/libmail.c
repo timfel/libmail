@@ -27,7 +27,7 @@ char* mail_get_error_str() {
 }
 
 
-mail_account* mail_new(enum mail_type x) {
+mail_account* mail_new(mail_type x) {
   mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
   if (em == NULL) return NULL;
   switch(x) {
