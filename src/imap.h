@@ -1,8 +1,8 @@
-/* 
+/*
  * Copyright (C) 2012 by Tim Felgentreff
- * 
+ *
  * This file is part of libmail.
- * 
+ *
  * libmail is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
@@ -14,35 +14,19 @@
  * License along with libmail.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBMAIL_H
-#define LIBMAIL_H
+#ifndef LIBMAIL_IMAP_H
+#define LIBMAIL_IMAP_H
 
 #include "mail_types.h"
 
-#include "oxws.h"
-#include "imap.h"
-
-
-#if defined(__WIN32__) || defined(__MINGW32__)
-# define DLLImport __declspec(dllexport)
-#else
-# define DLLImport
-#endif
-
-
-DLLImport char* mail_get_error_str();
-
-DLLImport mail_account* mail_new(enum mail_type x);
-DLLImport void mail_free(mail_account* x, ...);
-
-DLLImport bool mail_discover_settings(mail_account* x, ...);
-DLLImport bool mail_set_settings(mail_account* x, ...);
-DLLImport bool mail_connect(mail_account* x, ...);
-
+mail_account* mail_new_imap(mail_account* em);
+bool mail_settings_autodiscover_imap(mail_account* self, va_list args);
+bool mail_settings_set_imap(mail_account* self, va_list args);
+bool mail_connect_imap(mail_account* self, va_list args);
 
 #endif
 
-/* 
+/*
  * Local Variables:
  * before-save-hook: copyright-update
  * c-basic-offset: 2

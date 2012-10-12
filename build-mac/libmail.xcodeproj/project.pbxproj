@@ -14,6 +14,8 @@
 		8AB820511625C37200BD2B26 /* oxws.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8204C1625C37200BD2B26 /* oxws.c */; };
 		8AB820521625C37200BD2B26 /* oxws.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AB8204D1625C37200BD2B26 /* oxws.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AB820AC1625C3A500BD2B26 /* libetpan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB820831625C39F00BD2B26 /* libetpan.framework */; };
+		8AC05A7A162778F300C7A6EA /* imap.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AC05A79162778F300C7A6EA /* imap.c */; };
+		8AC05A7B1627849400C7A6EA /* imap.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC05A60162778A200C7A6EA /* imap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		8AB8204D1625C37200BD2B26 /* oxws.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oxws.h; sourceTree = "<group>"; };
 		8AB820531625C39F00BD2B26 /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "../lib/libetpan/build-mac/libetpan.xcodeproj"; sourceTree = "<group>"; };
 		8AB820AD1625C3AC00BD2B26 /* libetpan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libetpan.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/libmail-gbfbglivhppavabfofurwcpschmr/Build/Products/Debug/libetpan.framework"; sourceTree = "<group>"; };
+		8AC05A60162778A200C7A6EA /* imap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imap.h; sourceTree = "<group>"; };
+		8AC05A79162778F300C7A6EA /* imap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = imap.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,8 @@
 				8AB8204B1625C37200BD2B26 /* mail_types.h */,
 				8AB8204C1625C37200BD2B26 /* oxws.c */,
 				8AB8204D1625C37200BD2B26 /* oxws.h */,
+				8AC05A60162778A200C7A6EA /* imap.h */,
+				8AC05A79162778F300C7A6EA /* imap.c */,
 			);
 			name = src;
 			path = ../src;
@@ -270,6 +276,7 @@
 				8AB8204F1625C37200BD2B26 /* libmail.h in Headers */,
 				8AB820501625C37200BD2B26 /* mail_types.h in Headers */,
 				8AB820521625C37200BD2B26 /* oxws.h in Headers */,
+				8AC05A7B1627849400C7A6EA /* imap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +500,7 @@
 			files = (
 				8AB8204E1625C37200BD2B26 /* libmail.c in Sources */,
 				8AB820511625C37200BD2B26 /* oxws.c in Sources */,
+				8AC05A7A162778F300C7A6EA /* imap.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

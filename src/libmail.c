@@ -22,7 +22,6 @@ char* mail_get_error_str() {
   } else {
     char* cpy = (char*)calloc(strlen(mail_errno) + 1, sizeof(char));
     strcpy(cpy, mail_errno);
-    printf("%s -> %s\n", mail_errno, cpy);
     return cpy;
   }
 }
@@ -30,12 +29,11 @@ char* mail_get_error_str() {
 
 mail_account* mail_new(enum mail_type x) {
   mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
-  if (em == NULL) {
-    return NULL;
-  }
+  if (em == NULL) return NULL;
   switch(x) {
-  case OXWS: return mail_new_oxws(em);
-  default: return NULL;
+    case OXWS: return mail_new_oxws(em);
+    case IMAP: return mail_new_imap(em);
+    default: return NULL;
   }
 }
 
