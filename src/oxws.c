@@ -16,18 +16,18 @@
 
 #include "oxws.h"
 
-mail_account* mail_new_oxws(mail_account* em) {
-  em->self.oxws = oxws_new();
-  if (em->self.oxws == NULL)
+mail_account* mail_new_oxws(mail_account* a) {
+  a->self.oxws = oxws_new();
+  if (a->self.oxws == NULL)
     return NULL;
 
-  em->mail_capabilities = MAIL_CAN_SEND | MAIL_CAN_SEND | MAIL_CAN_SEARCH;
-  em->settings_autodiscover = &mail_settings_autodiscover_oxws;
-  em->settings_set = &mail_settings_set_oxws;
-  em->connect = &mail_connect_oxws;
-  /* em->find = &mail_find_oxws; */
+  a->mail_capabilities = 0; /* MAIL_CAN_SEND | MAIL_CAN_RECEIVE | MAIL_CAN_SEARCH */
+  a->settings_autodiscover = &mail_settings_autodiscover_oxws;
+  a->settings_set = &mail_settings_set_oxws;
+  a->connect = &mail_connect_oxws;
+  /* a->find = &mail_find_oxws; */
 
-  return em;
+  return a;
 }
 
 #define DECLARE_ERROR_CASE(result, error_message) \
@@ -36,16 +36,16 @@ mail_account* mail_new_oxws(mail_account* em) {
   default: mail_set_error_str("An unknown error occurred."); break;
 
 bool mail_settings_autodiscover_oxws(mail_account* a, va_list args) {
-  char *host, *mail, *user, *pw, *domain;
+  char *host, *email, *user, *pw, *domain;
   oxws_result result;
 
   host = va_arg(args, char*);
-  mail = va_arg(args, char*);
+  email = va_arg(args, char*);
   user = va_arg(args, char*);
   pw = va_arg(args, char*);
   domain = va_arg(args, char*);
 
-  result = oxws_autodiscover_connection_settings(a->self.oxws, host, mail, user, pw, domain);
+  result = oxws_autodiscover_connection_settings(a->self.oxws, host, email, user, pw, domain);
   switch (result) {
     case OXWS_NO_ERROR: return true;
 
