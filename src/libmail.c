@@ -27,6 +27,7 @@ char* mail_get_error_str() {
   }
 }
 
+
 mail_account* mail_new(enum mail_type x) {
   mail_account* em = (mail_account*)calloc(sizeof(mail_account), 1);
   if (em == NULL) {
@@ -37,6 +38,19 @@ mail_account* mail_new(enum mail_type x) {
   default: return NULL;
   }
 }
+
+void mail_free(mail_account* a, ...) {
+  if(a->free == NULL) {
+    mail_set_error_str("Internal error: pure virtual function call.");
+    return;
+  }
+  
+  va_list args;
+  va_start(args, a);
+  a->free(a, args);
+  va_end(args);
+}
+
 
 #define WRAP_FUNCTION(FUNC_NAME, METHOD_NAME) \
   bool FUNC_NAME(mail_account* a, ...) { \

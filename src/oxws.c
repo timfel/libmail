@@ -22,6 +22,9 @@ mail_account* mail_new_oxws(mail_account* a) {
     return NULL;
 
   a->mail_capabilities = 0; /* MAIL_CAN_SEND | MAIL_CAN_RECEIVE | MAIL_CAN_SEARCH */
+  
+  a->free = &mail_free_oxws;
+  
   a->settings_autodiscover = &mail_settings_autodiscover_oxws;
   a->settings_set = &mail_settings_set_oxws;
   a->connect = &mail_connect_oxws;
@@ -29,6 +32,12 @@ mail_account* mail_new_oxws(mail_account* a) {
 
   return a;
 }
+
+void mail_free_oxws(mail_account* a, va_list args) {
+  if(a == NULL) return;
+  oxws_free(a->self.oxws);
+}
+
 
 #define DECLARE_ERROR_CASE(result, error_message) \
   case result: mail_set_error_str(error_message); break;

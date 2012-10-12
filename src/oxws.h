@@ -20,6 +20,8 @@
 #include "mail_types.h"
 
 mail_account* mail_new_oxws(mail_account* a);
+void mail_free_oxws(mail_account* a, va_list args);
+
 bool mail_settings_autodiscover_oxws(mail_account* a, va_list args);
 bool mail_settings_set_oxws(mail_account* a, va_list args);
 bool mail_connect_oxws(mail_account* a, va_list args);

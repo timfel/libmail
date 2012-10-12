@@ -26,11 +26,16 @@
 # define DLLImport
 #endif
 
+
 DLLImport char* mail_get_error_str();
+
 DLLImport mail_account* mail_new(enum mail_type x);
+DLLImport void mail_free(mail_account* x, ...);
+
 DLLImport bool mail_discover_settings(mail_account* x, ...);
 DLLImport bool mail_set_settings(mail_account* x, ...);
 DLLImport bool mail_connect(mail_account* x, ...);
+
 
 #endif
 

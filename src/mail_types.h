@@ -45,10 +45,14 @@ typedef struct _mail_account {
   } self;
 
   int mail_capabilities;
+  
+  void (*free)(struct _mail_account*, va_list);
+  
   bool (*settings_autodiscover)(struct _mail_account*, va_list);
   bool (*settings_set)(struct _mail_account*, va_list);
   bool (*connect)(struct _mail_account*, va_list);
   bool (*find)(struct _mail_account*, va_list);
+
 } mail_account;
 
 static char* mail_errno = NULL;
