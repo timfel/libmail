@@ -38,13 +38,18 @@ mail_account* mail_new(enum mail_type x) {
   }
 }
 
-#define WRAP_FUNCTION(FUNC_NAME, METHOD_NAME)		\
-  bool FUNC_NAME(mail_account* a, ...) {		\
-  va_list args;						\
-  va_start(args, a);					\
-  bool result = a->METHOD_NAME(a, args);		\
-  va_end(args);						\
-  return result;					\
+#define WRAP_FUNCTION(FUNC_NAME, METHOD_NAME) \
+  bool FUNC_NAME(mail_account* a, ...) { \
+    if (a->METHOD_NAME == NULL) { \
+      mail_set_error_str("Internal error: pure virtual function call."); \
+      return false; \
+    } \
+    \
+    va_list args; \
+    va_start(args, a); \
+    bool result = a->METHOD_NAME(a, args); \
+    va_end(args); \
+    return result; \
   }
 
 WRAP_FUNCTION(mail_discover_settings, settings_autodiscover)
