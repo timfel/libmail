@@ -2,3 +2,52 @@ libmail is a wrapper around libetpan to make it easier to use libetpan
 functionality from other languages via a FFI.
 
 For licensing, see the file COPYRIGHT
+
+Build & Installation
+====================
+
+To build and install, run the good old configure, make, make install.
+If you checked out the repository (instead of downloading a ready-made source
+package), you need to run `autogen.sh' first.
+
+$ ./autogen.sh # optional for source packages
+$ ./configure --help # find out which options you need to specify
+$ ./configure <your options here>
+$ make
+$ make install # might need sudo, depending on the installation prefix
+
+libetpan
+--------
+
+This repository / source package includes a version of libetpan required to
+build libmail at lib/libetpan. In particular it requires the fork with Exchange
+support (https://github.com/lysannkessler/libetpan).
+
+If you see the following during configure of libmail:
+"checking for libetpan_get_version_major in -letpan... no" bei configure
+you did not install libetpan globally or forgot to specify the installation
+prefix with --with-libetpan.
+
+If you see something similar to:
+src/mail_types.h:41:5: error: unknown type name 'oxws'
+chances are that your version of libetpan is not the fork mentioned above.
+
+Separate build directory
+------------------------
+
+It is recommended to build in another directory, i.e. all the binaries are not
+located in the source directory, but somewhere else. In order to do this, run
+configure, make and make install from your target build directory, for example:
+$ ./autogen.sh
+$ mkdir build
+$ cd build
+$ ../configure <your options here>
+$ make
+$ make install
+This way you can easily build different configurations next to each other, and
+get rid of your build by deleting the build directory.
+
+More information
+----------------
+
+See the file 'INSTALL' for generic build instructions of autoconf projects.
